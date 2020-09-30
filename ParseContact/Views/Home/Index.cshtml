@@ -1,0 +1,204 @@
+﻿@model List<object[]>
+@{
+    ViewBag.Title = "Home Page";
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список всех заказов</title>
+    <link rel="stylesheet" href="~/content/Site.css" media="all">
+    <script src="/Scripts/jquery-1.11.3.min.js"></script>
+    @*<script src="~/Scripts/focus.js"></script>
+    <script src="/Scripts/audiojs/audiojs/audio.min.js"></script>*@
+</head>
+<body>
+    <div>
+        <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="mainblock">
+                <div class="filter-block">
+                    <div class="filter1">
+                        <div class="tit-filt-block"><p><b>Форма собственности</b></p></div>
+                        <div class="multiselect">
+                            <div class="selectBox" id="showlistcheckbox1" onclick="showCheckboxes(event,'checkboxes1')">
+                                <select style="font-size: 15px;font-weight: normal;">
+                                    <option>Форма</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div class="block-checkbox" id="checkboxes1">
+                                <label class="allcheck1">
+                                    <input type="checkbox" name="Form" value="" onchange="CheckAll(1)" /><span>Выбрать все</span>
+                                </label>
+                                @foreach (var item in ViewBag.Form)
+                                {
+                                    <label class="check1">
+                                        <input type="checkbox" name="Form" value="@item" /><span>@item</span>
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter1">
+                        <div class="tit-filt-block"><p><b>Область</b></p></div>
+                        <div class="multiselect">
+                            <div class="selectBox" id="showlistcheckbox2" onclick="showCheckboxes(event,'checkboxes2')">
+                                <select style="font-size: 15px;font-weight: normal;">
+                                    <option>Область</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div class="block-checkbox" id="checkboxes2">
+                                <label class="allcheck2">
+                                    <input type="checkbox" name="Obl" value="" onchange="CheckAll(2)" /><span>Выбрать все</span>
+                                </label>
+                                @foreach (var item in ViewBag.Obl)
+                                {
+                                    <label class="check2">
+                                        <input type="checkbox" name="Obl" value="@item" /><span>@item</span>
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter1">
+                        <div class="tit-filt-block"><p><b>Район</b></p></div>
+                        <div class="multiselect">
+                            <div class="selectBox" id="showlistcheckbox3" onclick="showCheckboxes(event,'checkboxes3')">
+                                <select style="font-size: 15px;font-weight: normal;">
+                                    <option>Район</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div class="block-checkbox" id="checkboxes3">
+                                <label class="allcheck3">
+                                    <input type="checkbox" name="Ray" value="" onchange="CheckAll(3)" /><span>Выбрать все</span>
+                                </label>
+                                @foreach (var item in ViewBag.Ray)
+                                {
+                                    <label class="check3">
+                                        <input type="checkbox" name="Ray" value="@item" /><span>@item</span>
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter1">
+                        <div class="tit-filt-block"><p><b>Город</b></p></div>
+                        <div class="multiselect">
+                            <div class="selectBox" id="showlistcheckbox4" onclick="showCheckboxes(event,'checkboxes4')">
+                                <select style="font-size: 15px;font-weight: normal;">
+                                    <option>Город</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div class="block-checkbox" id="checkboxes4">
+                                <label class="allcheck4">
+                                    <input type="checkbox" name="Gorod" value="" onchange="CheckAll(4)" /><span>Выбрать все</span>
+                                </label>
+                                @foreach (var item in ViewBag.Gorod)
+                                {
+                                    <label class="check4">
+                                        <input type="checkbox" name="Gorod" value="@item" /><span>@item</span>
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="padding-left:100px;">
+                @*<label class="allcheckdet">
+                    <input type="checkbox" value="" onchange="CheckAllDet()" /><span>Выбрать все</span>
+                    <span class="checkmark"></span>
+                </label>*@
+                @foreach (var item in Model)
+                {
+                    <div>
+                        <label class="container">
+                            <input type="checkbox" name="NumbDet" value="@item[0].ToString()" />
+                            <span class="checkmark"></span>
+                            @item[1].ToString()
+
+                        </label>
+                    </div>
+
+                }
+            </div>
+            <div style="text-align:center;">
+                <input type="text" value="" name="Table" placeholder="Название таблицы" style="margin-bottom: 10px;">
+            </div>
+            <div style="text-align:center;">
+                <input type="submit" value="Импортировать" style="margin-bottom: 100px;">
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //$('.check6 input[value=1]').change(function () {
+            //    if (this.select) {
+            //        $("#selectdis2").removeAttr("disabled");
+            //    } else {
+            //        $("#selectdis2").attr("disabled", "disabled");
+            //    }
+            //});
+            //$('.check6 input[value!=1]').change(function () {
+            //    $("#selectdis2").attr("disabled", "disabled");
+            //});
+
+            $("body").click(function () {
+                $(".block-checkbox").css("display", "none");
+            });
+
+            $(".block-checkbox").click(function (ev) {
+
+                ev.stopPropagation();
+            });
+
+        });
+        function showCheckboxes(event, srt) {
+
+            var status = $("#selectdis").attr("disabled");
+            var status2 = $("#selectdis2").attr("disabled");
+            if (srt == "checkboxes2") {
+                if (status == "disabled") {
+                    return;
+                }
+            }
+            if (srt == "checkboxes7") {
+                if (status2 == "disabled") {
+                    return;
+                }
+            }
+
+            $(".block-checkbox").css("display", "none");
+            $("#" + srt).css("display", "block");
+            event.stopPropagation();
+
+        }
+        function CheckAll(numb) {
+          
+            if ($('.allcheck' + numb + ' input').prop('checked')) {
+                $(".check" + numb + " input").prop('checked', true);
+            } else {
+                $('.check' + numb + ' input').prop('checked', false);
+            }
+        }
+        function CheckAllDet() {
+
+            if ($('.allcheckdet' + numb + ' input').prop('checked')) {
+                $(".container" + numb + " input").prop('checked', true);
+            } else {
+                $('.container' + numb + ' input').prop('checked', false);
+            }
+        }
+    </script>
+    <style>
+    </style>
+
+</body>
+</html>

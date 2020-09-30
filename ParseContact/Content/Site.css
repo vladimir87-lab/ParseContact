@@ -1,0 +1,404 @@
+﻿body {
+    margin: 0px;
+    min-height: 944px;
+    background-color: aliceblue;
+}
+
+/*.mainblock {
+    min-height: 610px;
+    padding: 10px;
+}*/
+
+.logo {
+    min-height: 100px;
+    position: relative;
+}
+
+.menu {
+    background-color: #63c5fb;
+    padding: 0px 20px;
+}
+
+.item-menu {
+    display: inline-block;
+    padding: 12px 12px;
+}
+
+    .item-menu a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #042f3b;
+        padding: 12px 12px;
+    }
+
+        .item-menu a:hover {
+            color: #63c5fb;
+        }
+
+    .item-menu:hover {
+        background-color: #013451;
+    }
+
+h1, h2, h3, h4 {
+    color: #042f3b;
+}
+
+a {
+    color: #1e8de0;
+    text-decoration: none;
+}
+
+p {
+    margin: 5px 0px;
+}
+
+span {
+    color: #042f3b;
+}
+
+.bolt-text {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.tdblockspan {
+    font-size: 16px;
+    color: #042f3b;
+}
+
+.tdblock {
+    display: inline-block;
+}
+
+.block-set-pass {
+    display: inline-block;
+    text-align: left;
+    background-color: #e2f4fb;
+    border-radius: 5px;
+    padding: 5px;
+    width: 97%;
+}
+
+a:hover {
+    color: #0b4b7b;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.footer {
+    background-color: #042f3b;
+    height: 100px;
+    text-align: center;
+}
+
+.subfooter {
+    display: inline-block;
+}
+
+    .subfooter p {
+        color: #78bbf6;
+        font-size: 16px;
+    }
+
+input,
+select,
+textarea {
+    max-width: 280px;
+    padding: 5px;
+    font-size: 18px;
+    color: #042f3b;
+    border: 1px solid #8fa4aa;
+}
+
+    input:focus,
+    select:checked,
+    textarea:checked {
+        border: 1px solid #63c5fb;
+    }
+
+.botton {
+    color: #63c5fb;
+    background-color: #042f3b;
+    cursor: pointer;
+    padding: 6px 10px;
+    font-size: 17px;
+}
+
+    .botton:hover {
+        background-color: #63c5fb;
+        color: #042f3b;
+    }
+
+.admin-menu {
+    background-color: #042f3b;
+    padding: 0px 10px;
+}
+
+.item-admin-menu {
+    padding: 5px;
+    display: inline-block;
+}
+
+    .item-admin-menu a {
+        font-size: 15px;
+        color: #87c1fb;
+        text-decoration: none;
+    }
+
+        .item-admin-menu a:hover {
+            color: #d7edf6;
+        }
+
+.ponterline {
+    color: aliceblue;
+    position: relative;
+    left: 3px;
+}
+
+.table-order {
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+    .table-order th {
+        background-color: #d3eaf8;
+        padding: 10px;
+        border: 1px solid #92bac5;
+    }
+
+    .table-order td {
+        border: 1px solid #92bac5;
+        padding: 5px;
+    }
+
+td, th {
+    color: #042f3b;
+}
+
+.trblock {
+    padding: 0px;
+}
+
+.fierst-td {
+    text-align: center;
+}
+
+.block-oc {
+    display: inline-block;
+    text-align: center;
+    padding: 0px 15px;
+    max-width: 230px;
+    position: relative;
+    height: 200px;
+    vertical-align: top;
+}
+
+    .block-oc p {
+        font-size: 20px;
+        font-style: italic;
+        color: #042f3b;
+    }
+
+.list-oc {
+    position: absolute;
+    bottom: -5px;
+    left: 70px;
+}
+
+.filter-block {
+    padding: 10px;
+    background-color: #e2f4fb;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+.filter1 {
+    display: inline-block;
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+.multiselect {
+    width: 200px;
+}
+
+.selectBox {
+    position: relative;
+}
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.block-checkbox {
+    display: none;
+    border: 1px #dadada solid;
+    position: absolute;
+    background-color: rgb(211, 234, 248);
+    max-height: 500px;
+    overflow: auto;
+    width: 200px;
+    text-align: left;
+    z-index: 5;
+}
+
+    .block-checkbox label {
+        display: block;
+        padding: 3px;
+    }
+
+        .block-checkbox label:hover {
+            background-color: #e7eff6;
+        }
+
+.tit-filt-block {
+    font-size: 20px;
+    font-style: italic;
+    color: #042f3b;
+}
+
+.popup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    z-index: 3;
+}
+
+.popup_bg {
+    background: rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+}
+
+.popup_img {
+    position: absolute;
+    z-index: 88;
+    height: auto;
+    border-radius: 5px;
+    max-width: 1300px;
+    margin: auto;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    top: 0px;
+}
+
+.close_cros {
+    z-index: 90;
+}
+
+.showwindowblock {
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.pagenavi {
+    text-align: center;
+    padding: 20px;
+}
+
+    .pagenavi a {
+        border: 1px solid #c0e9f9;
+        border-radius: 5px;
+        padding: 6px 10px;
+        margin: 1px;
+        background-color: #e2f4fb;
+        cursor: pointer;
+    }
+
+        .pagenavi a:hover {
+            background-color: #7fdfff;
+        }
+
+    .pagenavi .activlink {
+        background-color: #042f3b;
+    }
+
+
+.polblock {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+}
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #c0e2e6;
+    
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
