@@ -34,14 +34,15 @@ namespace ParseContact.Controllers
             return View(lstkinds.OrderBy(i=> i[1]).ToList());
         }
         [HttpPost]
-        public ActionResult Index(string[] NumbDet, string[] Form, string[] Obl, string[] Ray, string[] Gorod , string Table)
+        public ActionResult Index(string[] NumbDet, string[] Form, string[] Obl, string[] Ray, string[] Gorod , string Table, int CoutMin=0, int CoutMax=1000000)
         {
             List<object[]> lstkalldata = sql.SelectAllData();
             List<object[]> lstkallActive = sql.SelectAllActivKind();
             List<object[]> allcont = sql.SelectAllContakt();
 
             List<string> idkund = lstkallActive.Where(i => NumbDet.Contains(i[1].ToString())).Select(q => q[0].ToString()).ToList();
-            List<string> lstid = lstkalldata.Where(n => idkund == null ? 1 == 1 : idkund.Contains(n[0].ToString())).Where(f => Form == null ? 1 == 1 : Form.Contains(f[2].ToString())).Where(o => Obl == null ? 1 == 1 : Obl.Contains(o[8].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(g => Gorod == null ? 1 == 1 : Gorod.Contains(g[11].ToString())).Select(s=>s[0].ToString()).ToList();
+            List<string> lstid = lstkalldata.Where(n => idkund == null ? 1 == 1 : idkund.Contains(n[0].ToString())).Where(f => Form == null ? 1 == 1 : Form.Contains(f[2].ToString())).Where(o => Obl == null ? 1 == 1 : Obl.Contains(o[8].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(g => Gorod == null ? 1 == 1 : Gorod.Contains(g[11].ToString())).Where(n => Convert.ToInt32(n[3])>= CoutMin).Where(x => Convert.ToInt32(x[3]) <= CoutMax).Select(s=>s[0].ToString()).ToList();
+           // List<string> lstid = lstkalldata.Where(n => idkund == null ? 1 == 1 : idkund.Contains(n[0].ToString())).Where(f => Form == null ? 1 == 1 : Form.Contains(f[2].ToString())).Where(o => Obl == null ? 1 == 1 : Obl.Contains(o[8].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(r => Ray == null ? 1 == 1 : Ray.Contains(r[7].ToString())).Where(g => Gorod == null ? 1 == 1 : Gorod.Contains(g[11].ToString())).Select(s => s[0].ToString()).ToList();
 
             List<object[]> numb = allcont.Where(i => lstid == null ? 1 == 1 : lstid.Contains(i[0].ToString())).ToList();
             try
